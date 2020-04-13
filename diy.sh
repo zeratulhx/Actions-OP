@@ -18,3 +18,5 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 # Delete default password
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings
 
+# Feeds update and install for new packages
+./scripts/feeds update -a && ./scripts/feeds install -a
