@@ -3,7 +3,7 @@
 # Description: Build OpenWrt using GitHub Actions
 # Lisence: MIT
 # Author: P3TERX
-# Blog: https://p3terx.com
+# Contributed: digitcloud
 #=================================================
 
 name: Build OpenWrt
@@ -26,11 +26,12 @@ env:
   REPO_URL: https://github.com/Lienol/openwrt
   REPO_BRANCH: dev-19.07
   CONFIG_FILE: .config
+  THIRD_PARTY_SH: third_party.sh
   DIY_SH: diy.sh
   SSH_ACTIONS: true
   UPLOAD_BIN_DIR: true
   UPLOAD_FIRMWARE: true
-  UPLOAD_COWTRANSFER: false
+  UPLOAD_COWTRANSFER: true
   UPLOAD_WETRANSFER: false
   TZ: Asia/Shanghai
 
@@ -57,6 +58,9 @@ jobs:
 
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+
+    - name: Add third-party feeds
+      run: chmod +x $THIRD_PARTY_SH && ./$THIRD_PARTY_SH
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
