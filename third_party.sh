@@ -6,4 +6,4 @@
 #=================================================
 cd openwrt
 
-echo 'src-git rosy https://github.com/rosywrt/luci-theme-rosy' >> feeds.conf.default
+sed -i '$a\src-git rosy https://github.com/rosywrt/luci-theme-rosy' feeds.conf.default
