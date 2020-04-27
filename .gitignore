@@ -1,2 +1,3 @@
 # Ignore certain type files
 .DS_Store
+.desktop.ini
