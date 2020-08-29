@@ -26,7 +26,7 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - 文件系统支持包含exfat,ext4,f2fs,nfs,nfs-v3,nfs-v4,squashfs,vfat,fuse,不支持ntfs(只读)
 
-- 集成系统实时监控netdata, 内置snmpd
+- 集成snmpd, ttyd等控件，并加入了**docker**框架及管理页面方便构建私有容器
 
 - 有线网卡驱动按需选择，基础配置文件只包含e1000,e1000e,igb和vmxnet3(ESXI,PVE虚拟网卡)，不包含无线网卡驱动集成
 
@@ -34,7 +34,7 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - Luci-app: **ADH**, **Adbyby+**, Autoreboot, **Baidupcs-web**, CIFS-Server, **Dockerman**, Tcpdump(可视化抓包), DDNS(aliyun, cloudflare, dnspod), Filetransfer(方便安装.ipk), Fileassistant, **NPS**(替换frpc), KMS, MiniDLNA, Samba3, SFTP, **SmartDNS**, TurboAcc, **U-Netease-Music**
 
-- **Passwall(包含所有依赖，需要自行安装luci-app-passwall)**, **Zerotier**, VPN servers[trojan-server, v2ray-server, IPSec-server, Openconnect-server, OpenVPN-server, Softether-server]
+- **Passwall, **Zerotier**, VPN servers[trojan-server, v2ray-server, IPSec-server, Openconnect-server, OpenVPN-server, Softether-server]
 
 - 一些命令行工具: curl, wget, gzip, tar, nano, screen, findutils, mountutils, **open-vm-tools**等
 
