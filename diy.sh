@@ -14,6 +14,6 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 sed -i "/CYXluq4wUazHjmCDBCqXF/d" package/default-settings/files/zzz-default-settings
 
 # Change sipmle-obfs package to lean's source
-cd feeds/lienol/package/
+cd feeds/diy1/package/
 rm -rf simple-obfs
 svn checkout https://github.com/coolsnowwolf/lede/trunk/package/lean/simple-obfs
