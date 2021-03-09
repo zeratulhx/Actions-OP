@@ -14,6 +14,8 @@ Building your OpenWrt project using GitHub Actions
 
 
 
+新增通过release下载相对应固件，版本发布以release tag为主。
+
 ## Architecture
 
 基础配置文件基于intel x64架构，提供grub和efi两种bios启动方式，固定root分区大小为300M
@@ -30,11 +32,9 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - 有线网卡驱动按需选择，基础配置文件只包含e1000,e1000e,igb和vmxnet3(ESXI,PVE虚拟网卡)，不包含无线网卡驱动集成
 
-- luci主题增加argon, argon-light(green), argon-dark(purple), rosy等
+- Luci-app: **ADH**, **Adbyby+**, Autoreboot, **Baidupcs-web**, CIFS-Server, **Dockerman**, Tcpdump(可视化抓包), DDNS(aliyun, cloudflare, dnspod), Filetransfer(方便安装.ipk), Fileassistant, **NPS**, KMS, MiniDLNA, SFTP, **SmartDNS**, TurboAcc, **U-Netease-Music**等
 
-- Luci-app: **ADH**, **Adbyby+**, Autoreboot, **Baidupcs-web**, CIFS-Server, **Dockerman**, Tcpdump(可视化抓包), DDNS(aliyun, cloudflare, dnspod), Filetransfer(方便安装.ipk), Fileassistant, **NPS**(替换frpc), KMS, MiniDLNA, Samba3, SFTP, **SmartDNS**, TurboAcc, **U-Netease-Music**
-
-- **Passwall, **Zerotier**, VPN servers[trojan-server, v2ray-server, IPSec-server, Openconnect-server, OpenVPN-server, Softether-server]
+- **Passwall**, **Zerotier**, 几种VPN servers
 
 - 一些命令行工具: curl, wget, gzip, tar, nano, screen, findutils, mountutils, **open-vm-tools**等
 
@@ -48,7 +48,7 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - 修改diy.sh和third_party.sh文件，增加你所需要的软件源，修改默认ip地址和登录密码，并可增加更多自定义内容
 
-- 开始编译任务，点击右上角的 **Star** 按钮或上传你的 .config 文件覆盖原来的文件(建议基于这里的基础配置文件做修改，可以避免编译过程中不必要的出错)
+- 开始编译任务，上传你的 .config 文件覆盖原来的文件(建议基于这里的基础配置文件做修改，可以避免编译过程中不必要的出错)
 
   ```shell
   ##使用ubuntu进行源码编译生成配置文件的方法
@@ -68,6 +68,6 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 - Sign up and sign in to your Github Account.
 - Click the right up corner [Fork](https://github.com/digitcloud/Actions-OP/ ) to your repository.
 - Edit the diy.sh file and third_party.sh file while you could add external source packages, modify default ip address or root password, and even more out of your imagine.
-- Begin the compile task, by clicking the right up corner **Star** button or you could upload your predefined .config file (But suggest modifying params based on this config file to avoid unnecessary errors during compilation).
+- Begin the compile task, upload your predefined .config file (But suggest modifying params based on this config file to avoid unnecessary errors during compilation).
 - The compilation progress could be found on corresponding task in the Action page. Meanwhile, a step of logging into the virtual machine requires you to look into the **progress before hand.**
 - After you complete amending, wait the process about 2.5 hrs to run and later you would download your openwrt firmwares on `Artifacts`.
