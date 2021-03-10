@@ -12,7 +12,7 @@ Building your OpenWrt project using GitHub Actions
 >
 > Many thanks to their contribuction for providing great things
 
-
+<br/>
 
 新增通过release下载相对应固件，版本发布以release tag为主。
 
@@ -26,7 +26,7 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - 支持使用ipv6，支持usb2.0/3.0的存储，网卡，声卡模式
 
-- 文件系统支持包含exfat,ext4,f2fs,nfs,nfs-v3,nfs-v4,squashfs,vfat,fuse,不支持ntfs(只读)
+- 文件系统支持包含exfat,ext4,f2fs,squashfs,vfat,fuse,不支持ntfs(只读)
 
 - 集成snmpd, ttyd等控件，并加入了**docker**框架及管理页面方便构建私有容器
 
