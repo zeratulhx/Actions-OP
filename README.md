@@ -46,7 +46,7 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - 点击右上角 [Fork](https://github.com/digitcloud/Actions-OP/ ) 后会变成你的仓库
 
-- 修改diy.sh和third_party.sh文件，增加你所需要的软件源，修改默认ip地址和登录密码，并可增加更多自定义内容
+- 修改diy.sh和third_party.sh文件，增加你所需要的软件源，修改默认ip地址，并可增加更多自定义内容
 
 - 开始编译任务，上传你的 .config 文件覆盖原来的文件(建议基于这里的基础配置文件做修改，可以避免编译过程中不必要的出错)
 
@@ -57,9 +57,11 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
   mv seed.config .config
   ```
 
-- 编译进度可以在Actions相应的任务中查看，中间有个步骤需要ssh登录编译机，请**提前查看进度**才能弹出地址
+- 上传完成后点击进入Actions页面，选择相应的Workflow，通过点击 `Run workflow` 并选择是否在编译过程中打开SSH主机，Workflow将开始工作，编译进度可以在Actions相应的任务中查看
 
 - 在MENU做完增删改除后，待编译过程结束后(大约需要2.5小时)，可以在 `Artifacts` 中找到你编译好的固件，开启 [build-openwrt.yml](/.github/workflows/build-openwrt.yml) 里面的 `UPLOAD_COWTRANSFER` 和 `UPLOAD_WETRANSFER` 可同时将编译好的固件上传到 [cowtransfer](https://cowtransfer.com/) 和 [wetransfer](https://wetransfer.com/) 方便国内环境下载
+
+- 可以在随后的Releases中找到编译好的固件
 
 
 
@@ -67,7 +69,9 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 
 - Sign up and sign in to your Github Account.
 - Click the right up corner [Fork](https://github.com/digitcloud/Actions-OP/ ) to your repository.
-- Edit the diy.sh file and third_party.sh file while you could add external source packages, modify default ip address or root password, and even more out of your imagine.
+- Edit the diy.sh file and third_party.sh file while you could add external source packages, modify default ip address, and even more out of your imagine.
 - Begin the compile task, upload your predefined .config file (But suggest modifying params based on this config file to avoid unnecessary errors during compilation).
-- The compilation progress could be found on corresponding task in the Action page. Meanwhile, a step of logging into the virtual machine requires you to look into the **progress before hand.**
+- To start the workflow, click the Actions page and choose the specified workflow stream, click the `Run workflow` button and select whether you need to SSH to the host. The compilation progress could be found on corresponding task in the Action page.
 - After you complete amending, wait the process about 2.5 hrs to run and later you would download your openwrt firmwares on `Artifacts`.
+- The firmwares could also be found on the latest release page.
+
