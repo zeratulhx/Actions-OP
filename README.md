@@ -20,7 +20,7 @@ Building your OpenWrt project using GitHub Actions
 
 基础配置文件基于intel x64架构，提供grub和efi两种bios启动方式，固定root分区大小为300M
 
-openwrt内核版本为19.07稳定版，luci版本使用17.01
+openwrt内核版本为21.02稳定版，luci版本使用18.06
 
 目录：
 
@@ -33,8 +33,6 @@ openwrt内核版本为19.07稳定版，luci版本使用17.01
 - 有线网卡驱动按需选择，基础配置文件只包含e1000,e1000e,igb和vmxnet3(ESXI,PVE虚拟网卡)，不包含无线网卡驱动集成
 
 - Luci-app: **ADH**, **Adbyby+**, Autoreboot, **Baidupcs-web**, CIFS-Server, **Dockerman**, Tcpdump(可视化抓包), DDNS(aliyun, cloudflare, dnspod), Filetransfer(方便安装.ipk), Fileassistant, **NPS**, KMS, MiniDLNA, SFTP, **SmartDNS**, TurboAcc, **U-Netease-Music**等
-
-- **Passwall**, **Zerotier**, 几种VPN servers
 
 - 一些命令行工具: curl, wget, gzip, tar, nano, screen, findutils, mountutils, **open-vm-tools**等
 
